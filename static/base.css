@@ -1,0 +1,42 @@
+.navbar {
+  background-color: #1d2230 !important; /* cor escura do fundo */
+  
+}
+
+body{
+  background-color: #1d2230 !important; /* cor escura do fundo */
+  
+}
+
+.navbar .nav-link {
+  color: #f1f1f1 !important; /* texto claro */
+  margin: 0 6px;
+  transition: 0.3s;
+}
+
+.navbar-toggler {
+  border-color: #ffc107 !important; /* cor amarela para o toggle */
+  
+}
+
+
+
+.navbar .nav-link:hover {
+  color: #ffc107 !important; /* amarelo no hover */
+}
+
+.navbar .nav-link.active {
+  background-color: rgba(255, 193, 7, 0.2); /* amarelo suave no ativo */
+  border-radius: 6px;
+}
+
+.btn-warning {
+  background-color: #ffc107 !important; /* botão amarelo */
+  color: #1d2230 !important; /* texto escuro */
+  border-radius: 6px;
+}
+
+footer span {
+  color: #f1f1f1 !important; /* texto claro */
+  background-color: #1d2230 !important; /* cor escura do fundo */
+}

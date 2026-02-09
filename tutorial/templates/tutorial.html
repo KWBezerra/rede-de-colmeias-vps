@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'tutorial.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="d-flex" style="margin:0; padding:0;">
+  <!-- Sidebar -->
+  {% include "_sidebar.html" %}
+
+  <!-- Área principal -->
+  <div id="content" class="flex-grow-1 p-4 markdown-content">
+    {% if tutorial %}      
+      <div>{{ content_html|safe }}</div>
+    {% else %}
+      <h1>Escolha um tutorial no menu lateral</h1>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}

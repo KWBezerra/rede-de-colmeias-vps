@@ -1,0 +1,178 @@
+/* Título da seção de doações */
+.titulo-sub {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    /* background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%); */
+    color: white;
+    margin-bottom: 3rem;
+    border-radius: 0 0 30px 30px;
+    box-shadow: 0 4px 12px rgba(243, 156, 18, 0.3);
+}
+
+.titulo-sub h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #f9b233;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.titulo-sub p {
+    font-size: 1.1rem;
+    margin-bottom: -0.5rem;
+    opacity: 0.95;
+}
+
+.titulo-sub p:last-child {
+    font-size: 0.95rem;
+    margin-top: 1.0rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    display: inline-block;
+    backdrop-filter: blur(10px);
+}
+
+/* Container dos cards de doadores */
+.card-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 0 1.5rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Cards dos doadores/apoiadores */
+.card {
+    border: 2px solid #f39c12;
+    
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(243, 156, 18, 0.25);
+    border-color: #e67e22;
+}
+
+/* Imagem do card (logo ou foto do doador) */
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+    border-bottom: 3px solid #f39c12;
+}
+
+/* Corpo do card */
+.card-body {
+    padding: 1.5rem;
+    background: linear-gradient(to bottom, #ffffff 0%, #fffbf5 100%);
+    position: relative;
+}
+
+/* Selo "Apoiador" no canto */
+.card-body::after {
+    content: '🐝 Card Exemplo- Mão de Obra*';
+    position: absolute;
+    top: -12px;
+    right: 15px;
+    background: linear-gradient(135deg, #f9b233 0%, #e67e22 100%);
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(243, 156, 18, 0.4);
+}
+
+/* Título do card (nome do doador/empresa) */
+.card-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+    border-left: 4px solid #f39c12;
+    padding-left: 12px;
+}
+
+/* Texto do card */
+.card-text {
+    color: #34495e;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+}
+
+.card-text:last-child {
+    margin-bottom: 0;
+    font-style: italic;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+/* Estado vazio (quando não há doadores ainda) */
+.card.empty-state {
+    border-style: dashed;
+    background: #fafafa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    text-align: center;
+}
+
+.card.empty-state .card-body {
+    background: transparent;
+}
+
+.card.empty-state .card-body::after {
+    display: none;
+}
+
+.empty-state-message {
+    color: #95a5a6;
+    font-size: 1.1rem;
+}
+
+.empty-state-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+/* Estilizando links */
+
+.link-cards{
+  text-decoration: none;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .titulo-sub h1 {
+        font-size: 2rem;
+    }
+    
+    .titulo-sub p {
+        font-size: 1rem;
+    }
+    
+    .card-group {
+        grid-template-columns: 1fr;
+        padding: 0 1rem 2rem;
+    }
+    
+    .card-img-top {
+        height: 180px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .card-group {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

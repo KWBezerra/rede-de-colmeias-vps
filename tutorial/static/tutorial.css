@@ -1,0 +1,41 @@
+/* Área geral do conteúdo */
+#content {
+  background-color: #1d2230; /* Fundo suave que lembra mel */        
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  color: #ffffff;               /* Texto escuro para contraste */
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  min-height: 80vh;          /* Altura mínima para ocupar bem a tela */
+  padding: 2rem;             /* Espaço interno */
+}
+
+/* Estilo específico para o título do tutorial */
+#content h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #d4a017;  /* Tom dourado/mel */
+  text-align: center;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #f0c040; /* Linha decorativa */
+  padding-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+/* Opcional: estilizar qualquer parágrafo dentro do bloco */
+#content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Limita a largura do conteúdo dos tutoriais */
+.markdown-content {
+  max-width: 800px;   /* controla a largura máxima do texto */
+  margin: 0 auto;     /* centraliza dentro do espaço disponível */
+  font-size: 1rem;    /* ajuste do tamanho da fonte */
+  line-height: 1.6;   /* melhora leitura */
+}
+
+/* Opcional: para telas grandes, dá respiro da sidebar */
+#content {
+  padding-left: 2rem;
+}

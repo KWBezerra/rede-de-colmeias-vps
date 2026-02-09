@@ -1,0 +1,80 @@
+{% load static %}
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Rede de Colmeias{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Bootstrap via CDN (simples para protótipo) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'base.css' %}">
+  {% block extra_css %}{% endblock %}
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+    <!-- Nav bar -->
+
+    <nav class="navbar navbar-expand-sm py-1 " style="border: 0.3px solid rgba(255, 193, 7, 0.4);">
+    <div class="container">
+
+      <!-- Logo à esquerda -->
+      <a class="navbar-brand d-flex align-items-center" href="{% url 'home:home' %}">
+        <i class="bi bi-hexagon text-warning fs-4 me-2"></i>
+        <span class="fw-bold text-warning">Rede de Colmeias</span>
+      </a>
+
+      <!-- Botão responsivo -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        style="border-color: #ffc107; background-color: #ffc107;">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links centralizados -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">  <!-- mx-auto centraliza -->
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{% url 'home:home' %}">
+              <i class="bi bi-house-door me-1"></i> Início
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if '/tutorial' in request.path %}active{% endif %}" href="{% url 'tutorial:tutorial_list' %}">
+              <i class="bi bi-journal-bookmark me-1"></i> Tutoriais
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if '/donate' in request.path %}active{% endif %}" href="{% url 'donate:donate' %}">
+              <i class="bi bi-heart me-1"></i> Doações
+            </a>
+          </li>
+        </ul>
+
+        <!-- Botão à direita -->
+        <!-- <a class="btn btn-warning fw-bold ms-lg-3" href="">
+          Entrar
+        </a> -->
+      </div>
+    </div>
+  </nav>
+  <!-- CONTEÚDO -->
+  
+  {% block content %}{% endblock %}
+  
+  <!-- FOOTER -->
+  <footer class="mt-auto border-top bg-dark text-white">
+    <div class="container small py-3 d-flex flex-column flex-md-row justify-content-center">
+      <span>&copy; 2025 Rede de Colmeias. Projeto realizado por Kawan Bezerra.</span>
+      <!-- <span>
+        <a href="#" class="text-white">Privacidade</a> ·
+        <a href="#" class="text-white">Termos</a> ·
+        <a href="#" class="text-white">Contato</a>
+      </span> -->
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

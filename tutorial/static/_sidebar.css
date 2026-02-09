@@ -1,0 +1,57 @@
+/* Estilos padrão para telas grandes (sem media query) */
+#sidebar {
+  width: 200px;
+  min-height: 100vh;
+  background: #1d2230;
+  border-right: 1px solid #ddd;
+  padding: 10px 1px;
+  margin: 0;  
+  left: 0;
+  transition: left 0.3s ease-in-out; /* Prepara a transição para telas pequenas */
+  
+  
+}
+
+/* Links */
+#sidebar .nav-link {
+  color: #aaa6a6;
+  padding: 10px; 
+  transition: background-color 0.3s ease; 
+  border-bottom: 1px solid;
+}
+
+#sidebar .nav-link:hover {
+  background-color: rgba(255, 193, 7, 0.2);
+}
+
+
+.menu-toggle {
+    display: none; /* Oculta o botão por padrão */
+    background-color: #f0c040;
+    border: none;
+    box-shadow: none;
+    
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+      /* Esconde a barra lateral ao movê-la para a esquerda, fora da tela */
+      transform: translateX(-100%);
+      position: fixed; /* Apenas em telas pequenas, para o pop-up */
+      left: 0;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+    }
+    
+    .menu-toggle {
+        /* Mostra o botão apenas em telas pequenas */
+        display: block;
+        
+    }
+
+    /* Quando a classe 'show-sidebar' é adicionada, a barra lateral aparece */
+    #sidebar.show-sidebar {
+      transform: translateX(0);
+    }
+}

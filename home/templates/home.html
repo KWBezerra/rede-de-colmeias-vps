@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Página Inicial{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'home.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<!-- contem texto principal e imagem da abelha -->
+<div class="hero-section">
+  <div class="hero-content">
+    <div class="hero-title-img">
+      <h1>Conectando <br> Criadores de <br> <span>Abelhas Nativas</span></h1>
+      <div class="hexagon">
+        <img src="{% static 'imagens/BeeInicio.png' %}" alt="Imagem de abelha mandaçaia">
+      </div>
+    </div>
+
+    <p class="hero-subtitle">
+      Portal educativo e colaborativo para iniciantes em meliponicultura. 
+      Aprenda, compartilhe e preserve as abelhas sem ferrão do Brasil.
+    </p>
+    <!-- botoes de atalho Doaçao e Tutorial -->
+    <div class="hero-buttons">
+      <a class="btn-learn" href= "{% url 'tutorial:tutorial_list' %}" >📘 Quero Aprender</a>
+      <a class="btn-donate" href="{% url 'donate:donate' %}">💚 Quero Ajudar</a>
+    </div>
+  </div>
+</div>
+
+<!-- Apresentando algumas especies de abelhas sem ferrão -->
+
+<div id="div-subtitle">
+  <h2 id="subtitle-especies">
+    Conheça algumas especies nativas!
+  </h2>
+</div>
+ <!-- Cards com imagem e texto -->
+<div>
+<div class="card-group">
+  <div class="card">
+    <img src="{% static 'imagens/abelha-jatai.jpg' %}" class="card-img-top" alt="Abelha Jataí">
+    <div class="card-body">
+      <h5 class="card-title">Jataí (Tetragonisca angustula)</h5>
+      <p class="card-text">É a abelha sem ferrão mais popular do Brasil, encontrada tanto em florestas quanto em áreas urbanas.</p>
+      <p class="card-text">Costuma construir seus ninhos em cavidades de árvores ou muros. A entrada do ninho é um característico "tubinho" de cera clara.</p>
+      <p class="card-text"> Ela é responsável pela reprodução de muitas árvores nativas e é fundamental para a manutenção de pequenos ecossistemas em jardins e parques urbanos.</p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="{% static 'imagens/abelha-mandacaia.jpg' %}" class="card-img-top" alt="Abelha Mandaçaia">
+    <div class="card-body">
+      <h5 class="card-title">Mandaçaia (Melipona quadrifasciata)</h5>
+      <p class="card-text">Uma abelha robusta, negra com listras amarelas no abdômen, muito apreciada pela meliponicultura</p>
+      <p class="card-text">"Mandaçaia" significa "vigia bonito", devido à abelha que fica sempre na entrada do ninho, que é construído com barro e resina.</p>
+      <p class="card=text">Ela realiza a polinização por vibração, vital para plantas da flora nativa e também para culturas como o tomate e o pimentão. Seu raio de voo é maior, cobrindo fragmentos de floresta distantes.</p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="{% static 'imagens/abelha-urucu-amarela.jpg' %}" class="card-img-top" alt="Abelha Uruçu-Amarela">
+    <div class="card-body">
+      <h5 class="card-title">Uruçu-Amarela (Melipona flavolineata)</h5>
+      <p class="card-text">Considerada uma das abelhas mais bonitas do Brasil, é típica das regiões Norte e Nordeste.</p>
+      <p class="card-text">Suas colônias são populosas e produzem um mel muito valorizado pelo sabor cítrico e propriedades medicinais.</p>
+      <p class="card-text">É uma das principais polinizadoras da Floresta Amazônica e de áreas de transição. Sem ela, muitas espécies de árvores de grande porte não conseguiriam produzir sementes, o que comprometeria a renovação da própria floresta.</p>
+    </div>
+  </div>
+</div>
+</div>
+{% endblock %}
